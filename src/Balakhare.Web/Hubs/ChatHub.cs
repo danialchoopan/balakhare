@@ -41,7 +41,6 @@ public class ChatHub : Hub
             ForwardedFromUserId = forwardedFromUserId
         };
 
-        // Enrich with Link Preview
         await _linkPreviewService.EnrichWithPreviewAsync(message);
 
         _context.Messages.Add(message);
@@ -72,15 +71,26 @@ public class ChatHub : Hub
         });
     }
 
+    public async Task DeleteMessage(int messageId, int userId)
+    {
+        var message = await _context.Messages.FindAsync(messageId);
+        if (message == null) return;
+
+        if (message.SenderId != userId)
+        {
+            throw new HubException("شما فقط می‌توانید پیام‌های خود را حذف کنید.");
+        }
+
+        _context.Messages.Remove(message);
+        await _context.SaveChangesAsync();
+
+        await Clients.Group(message.ChatId.ToString()).SendAsync("MessageDeleted", messageId);
+    }
+
     public async Task PinMessage(int chatId, int messageId)
     {
-        var chat = await _context.Chats.Include(c => c.Messages).FirstOrDefaultAsync(c => c.Id == chatId);
-        if (chat == null) return;
-
-        // Reset other pins in this chat (if only one is allowed) or just set this one
         var messages = await _context.Messages.Where(m => m.ChatId == chatId).ToListAsync();
         foreach (var m in messages) m.IsPinned = (m.Id == messageId);
-
         await _context.SaveChangesAsync();
 
         var pinnedMsg = messages.First(m => m.Id == messageId);
@@ -93,89 +103,36 @@ public class ChatHub : Hub
 
     public async Task AddReaction(int messageId, int userId, string reactionType)
     {
-        var existing = await _context.MessageReactions
-            .FirstOrDefaultAsync(r => r.MessageId == messageId && r.UserId == userId);
-
+        var existing = await _context.MessageReactions.FirstOrDefaultAsync(r => r.MessageId == messageId && r.UserId == userId);
         if (existing != null)
         {
-            if (existing.ReactionType == reactionType)
-            {
-                _context.MessageReactions.Remove(existing);
-            }
-            else
-            {
-                existing.ReactionType = reactionType;
-            }
+            if (existing.ReactionType == reactionType) _context.MessageReactions.Remove(existing);
+            else existing.ReactionType = reactionType;
         }
         else
         {
-            _context.MessageReactions.Add(new MessageReaction
-            {
-                MessageId = messageId,
-                UserId = userId,
-                ReactionType = reactionType,
-                CreatedAt = DateTime.UtcNow
-            });
+            _context.MessageReactions.Add(new MessageReaction { MessageId = messageId, UserId = userId, ReactionType = reactionType, CreatedAt = DateTime.UtcNow });
         }
-
         await _context.SaveChangesAsync();
 
-        var reactions = await _context.MessageReactions
-            .Where(r => r.MessageId == messageId)
-            .GroupBy(r => r.ReactionType)
-            .Select(g => new { Type = g.Key, Count = g.Count() })
-            .ToListAsync();
-
+        var reactions = await _context.MessageReactions.Where(r => r.MessageId == messageId).GroupBy(r => r.ReactionType).Select(g => new { Type = g.Key, Count = g.Count() }).ToListAsync();
         var message = await _context.Messages.FindAsync(messageId);
-        if (message != null)
-        {
-            await Clients.Group(message.ChatId.ToString()).SendAsync("UpdateReactions", new
-            {
-                MessageId = messageId,
-                Reactions = reactions
-            });
-        }
+        if (message != null) await Clients.Group(message.ChatId.ToString()).SendAsync("UpdateReactions", new { MessageId = messageId, Reactions = reactions });
     }
 
     public async Task JoinChat(int chatId, int userId)
     {
         var chat = await _context.Chats.FindAsync(chatId);
         var isMember = await _context.ChatMembers.AnyAsync(cm => cm.ChatId == chatId && cm.UserId == userId);
-
         if (isMember || (chat != null && chat.Type == ChatType.PublicChatroom))
         {
             await Groups.AddToGroupAsync(Context.ConnectionId, chatId.ToString());
-
-            // Send pinned message if exists
             var pinned = await _context.Messages.FirstOrDefaultAsync(m => m.ChatId == chatId && m.IsPinned);
             if (pinned != null)
             {
-                await Clients.Caller.SendAsync("MessagePinned", new
-                {
-                    MessageId = pinned.Id,
-                    Content = pinned.Content?.Length > 50 ? pinned.Content.Substring(0, 50) + "..." : pinned.Content
-                });
+                await Clients.Caller.SendAsync("MessagePinned", new { MessageId = pinned.Id, Content = pinned.Content?.Length > 50 ? pinned.Content.Substring(0, 50) + "..." : pinned.Content });
             }
         }
-        else
-        {
-            throw new HubException("شما اجازه ورود به این گفتگو را ندارید.");
-        }
-    }
-
-    public async Task LeaveChat(int chatId)
-    {
-        await Groups.RemoveFromGroupAsync(Context.ConnectionId, chatId.ToString());
-    }
-
-    public async Task TrackTyping(int chatId, string fullName, bool isTyping)
-    {
-        await Clients.OthersInGroup(chatId.ToString()).SendAsync("UserTyping", new
-        {
-            ChatId = chatId,
-            FullName = fullName,
-            IsTyping = isTyping
-        });
     }
 
     public async Task UpdateUserStatus(int userId, bool isOnline)

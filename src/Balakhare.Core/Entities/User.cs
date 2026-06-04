@@ -8,6 +8,8 @@ public class User
     public string? Bio { get; set; }
     public string? ProfilePicturePath { get; set; }
     public bool IsOnline { get; set; }
+    public bool IsAdmin { get; set; }
+    public bool IsBlocked { get; set; }
     public DateTime CreatedAt { get; set; }
     public DateTime LastSeen { get; set; }
 
