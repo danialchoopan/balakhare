@@ -48,17 +48,7 @@ using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
     db.Database.EnsureCreated();
-
-    if (!db.Chats.Any(c => c.Type == ChatType.PublicChatroom))
-    {
-        db.Chats.Add(new Chat
-        {
-            Title = "اتاق گفتگو عمومی",
-            Type = ChatType.PublicChatroom,
-            CreatedAt = DateTime.UtcNow
-        });
-        db.SaveChanges();
-    }
+    DataSeeder.Seed(db);
 }
 
 app.Run();

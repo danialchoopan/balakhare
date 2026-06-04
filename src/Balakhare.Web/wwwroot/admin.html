@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>پنل مدیریت بلاخره</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="/css/site.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 p-8">
+    <div class="max-w-6xl mx-auto">
+        <header class="flex justify-between items-center mb-8">
+            <h1 class="text-3xl font-bold">پنل مدیریت بلاخره</h1>
+            <a href="/" class="text-blue-500 underline">بازگشت به چت</a>
+        </header>
+
+        <div class="grid grid-cols-4 gap-4 mb-8" id="stats-container">
+            <!-- Stats cards -->
+        </div>
+
+        <div class="bg-white rounded-lg shadow p-6">
+            <h2 class="text-xl font-bold mb-4">مدیریت کاربران</h2>
+            <table class="w-full text-right border-collapse">
+                <thead>
+                    <tr class="bg-gray-50 border-b">
+                        <th class="p-2">شناسه</th>
+                        <th class="p-2">نام</th>
+                        <th class="p-2">نام کاربری</th>
+                        <th class="p-2">وضعیت</th>
+                        <th class="p-2">عملیات</th>
+                    </tr>
+                </thead>
+                <tbody id="users-table">
+                    <!-- User rows -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="/js/admin.js"></script>
+</body>
+</html>
