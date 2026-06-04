@@ -19,103 +19,155 @@
         <!-- Login Overlay -->
         <div id="login-overlay" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
             <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-xl w-96">
-                <h2 class="text-2xl font-bold mb-4 dark:text-white text-center">ورود به بلاخره</h2>
-                <input type="text" id="username-input" placeholder="نام کاربری" class="w-full p-2 mb-4 border rounded dark:bg-gray-700 dark:text-white dark:border-gray-600">
-                <button id="login-btn" class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600">ورود / ثبت‌نام</button>
+                <h2 class="text-2xl font-bold mb-4 dark:text-white text-center text-blue-500">بلاخره</h2>
+                <p class="text-center text-sm text-gray-500 mb-6">به پیشرفته‌ترین پیام‌رسان فارسی خوش آمدید</p>
+                <input type="text" id="username-input" placeholder="نام کاربری (مثلاً admin)" class="w-full p-3 mb-4 border rounded-lg dark:bg-gray-700 dark:text-white dark:border-gray-600 focus:ring-2 focus:ring-blue-500 outline-none">
+                <button id="login-btn" class="w-full bg-blue-500 text-white p-3 rounded-lg font-bold hover:bg-blue-600 transition-colors">ورود به سیستم</button>
             </div>
         </div>
 
         <!-- Sidebar -->
-        <div class="w-1/4 bg-white dark:bg-gray-800 border-l border-gray-200 dark:border-gray-700 flex flex-col">
-            <div class="p-4 border-b border-gray-200 dark:border-gray-700 flex justify-between items-center">
-                <h1 class="text-xl font-bold dark:text-white">بلاخره</h1>
+        <div class="w-1/4 bg-white dark:bg-gray-800 border-l border-gray-200 dark:border-gray-700 flex flex-col shadow-lg z-20">
+            <div class="p-4 border-b border-gray-200 dark:border-gray-700 flex justify-between items-center bg-gray-50 dark:bg-gray-800">
+                <div class="flex items-center">
+                    <div class="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center text-white mr-2 cursor-pointer" onclick="showProfileModal()">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                    </div>
+                    <h1 class="text-xl font-bold dark:text-white">بلاخره</h1>
+                </div>
                 <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 dark:text-white">
-                    <svg id="sun-icon" class="hidden w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 18v1m9-9h1M4 12H3m15.364-6.364l.707-.707M6.343 17.657l-.707.707M16.243 17.657l.707.707M6.343 6.343l-.707-.707M12 5a7 7 0 100 14 7 7 0 000-14z"></path></svg>
-                    <svg id="moon-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                    <svg id="sun-icon" class="hidden w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 3v1m0 18v1m9-9h1M4 12H3m15.364-6.364l.707-.707M6.343 17.657l-.707.707M16.243 17.657l.707.707M6.343 6.343l-.707-.707M12 5a7 7 0 100 14 7 7 0 000-14z"></path></svg>
+                    <svg id="moon-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
                 </button>
             </div>
 
-            <div class="p-2">
-                <input type="text" placeholder="جستجو..." class="w-full p-2 bg-gray-100 dark:bg-gray-700 dark:text-white rounded-lg focus:outline-none">
+            <div class="p-3">
+                <div class="relative">
+                    <input type="text" placeholder="جستجو..." class="w-full p-2 pr-8 bg-gray-100 dark:bg-gray-700 dark:text-white rounded-xl focus:outline-none focus:ring-1 focus:ring-blue-400">
+                    <svg class="w-4 h-4 absolute right-2.5 top-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                </div>
             </div>
 
-            <div class="flex border-b border-gray-200 dark:border-gray-700 overflow-x-auto text-sm" id="tabs">
-                <button onclick="switchTab('all')" class="tab-btn px-4 py-2 text-blue-500 border-b-2 border-blue-500 whitespace-nowrap" data-tab="all">همه</button>
-                <button onclick="switchTab('groups')" class="tab-btn px-4 py-2 text-gray-500 hover:text-blue-500 whitespace-nowrap" data-tab="groups">گروه‌ها</button>
-                <button onclick="switchTab('channels')" class="tab-btn px-4 py-2 text-gray-500 hover:text-blue-500 whitespace-nowrap" data-tab="channels">کانال‌ها</button>
-                <button onclick="switchTab('users')" class="tab-btn px-4 py-2 text-gray-500 hover:text-blue-500 whitespace-nowrap" data-tab="users">کاربران</button>
+            <div class="flex border-b border-gray-200 dark:border-gray-700 text-xs font-bold" id="tabs">
+                <button onclick="switchTab('all')" class="tab-btn flex-1 py-3 text-blue-500 border-b-2 border-blue-500" data-tab="all">همه</button>
+                <button onclick="switchTab('groups')" class="tab-btn flex-1 py-3 text-gray-500 hover:text-blue-500" data-tab="groups">گروه‌ها</button>
+                <button onclick="switchTab('channels')" class="tab-btn flex-1 py-3 text-gray-500 hover:text-blue-500" data-tab="channels">کانال‌ها</button>
+                <button onclick="switchTab('users')" class="tab-btn flex-1 py-3 text-gray-500 hover:text-blue-500" data-tab="users">کاربران</button>
             </div>
 
-            <div id="chat-list" class="flex-1 overflow-y-auto"></div>
+            <div id="chat-list" class="flex-1 overflow-y-auto custom-scrollbar"></div>
+
+            <div class="p-3 bg-gray-50 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 text-center">
+                <a href="/admin.html" class="text-xs text-blue-500 hover:underline">پنل مدیریت</a>
+            </div>
         </div>
 
         <!-- Chat Area -->
-        <div class="flex-1 flex flex-col bg-gray-50 dark:bg-gray-900">
+        <div class="flex-1 flex flex-col bg-[#e6ebee] dark:bg-[#0f172a] relative">
             <!-- Chat Header -->
-            <div id="chat-header" class="p-4 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 flex justify-between items-center hidden">
+            <div id="chat-header" class="p-3 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 flex justify-between items-center shadow-sm z-10 hidden">
                 <div class="flex items-center">
-                    <div class="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold ml-3" id="header-avatar">ب</div>
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white font-bold ml-3 shadow-md" id="header-avatar">ب</div>
                     <div>
-                        <h2 class="font-bold dark:text-white" id="header-title">نام چت</h2>
-                        <p class="text-xs text-gray-500 dark:text-gray-400" id="header-status">آنلاین</p>
+                        <h2 class="font-bold dark:text-white leading-tight" id="header-title">نام گفتگو</h2>
+                        <p class="text-[10px] text-blue-500 font-medium" id="header-status">آنلاین</p>
                     </div>
                 </div>
                 <div class="flex items-center space-x-2 space-x-reverse">
-                    <button id="search-btn" class="p-2 text-gray-500 hover:text-blue-500">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    <button id="search-btn" class="p-2 text-gray-400 hover:text-blue-500 transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    </button>
+                    <button class="p-2 text-gray-400 hover:text-blue-500">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"></path></svg>
                     </button>
                 </div>
             </div>
 
             <!-- Pinned Message Bar -->
-            <div id="pinned-message-bar" class="bg-gray-100 dark:bg-gray-700 p-2 text-xs border-b border-gray-200 dark:border-gray-600 hidden flex items-center justify-between">
-                <div class="flex items-center cursor-pointer" id="pinned-content-box">
-                    <div class="w-1 h-8 bg-blue-500 ml-2"></div>
-                    <div class="flex flex-col">
-                        <span class="text-blue-500 font-bold">پیام سنجاق شده</span>
-                        <span id="pinned-message-text" class="text-gray-600 dark:text-gray-300 truncate w-64">متن پیام...</span>
+            <div id="pinned-message-bar" class="bg-white/80 dark:bg-gray-800/80 backdrop-blur-md p-2 text-xs border-b border-gray-200 dark:border-gray-600 hidden flex items-center justify-between z-10 sticky top-0">
+                <div class="flex items-center cursor-pointer flex-1" id="pinned-content-box">
+                    <div class="w-0.5 h-8 bg-blue-500 ml-3 rounded-full"></div>
+                    <div class="flex flex-col overflow-hidden">
+                        <span class="text-blue-500 font-bold text-[10px]">پیام سنجاق شده</span>
+                        <span id="pinned-message-text" class="text-gray-600 dark:text-gray-300 truncate text-xs">...</span>
                     </div>
                 </div>
+                <button class="text-gray-400 p-1">×</button>
             </div>
 
-            <!-- Search Bar -->
-            <div id="in-chat-search-bar" class="bg-gray-100 dark:bg-gray-700 p-2 hidden flex items-center">
-                <input type="text" id="in-chat-search-input" placeholder="جستجو در گفتگو..." class="flex-1 p-1 bg-white dark:bg-gray-800 dark:text-white rounded border-none text-sm">
-                <button onclick="closeSearch()" class="p-1 mr-2 text-gray-500">لغو</button>
+            <!-- In-Chat Search -->
+            <div id="in-chat-search-bar" class="bg-white dark:bg-gray-800 p-2 shadow-inner hidden flex items-center z-10">
+                <input type="text" id="in-chat-search-input" placeholder="جستجو در این گفتگو..." class="flex-1 p-2 bg-gray-50 dark:bg-gray-700 dark:text-white rounded-lg border-none text-sm outline-none">
+                <button onclick="closeSearch()" class="px-3 py-2 mr-2 text-blue-500 text-sm font-bold">لغو</button>
             </div>
 
-            <!-- Messages -->
-            <div id="messages-container" class="flex-1 overflow-y-auto p-4 flex flex-col space-y-4">
-                <div class="flex-1 flex items-center justify-center text-gray-400">
-                    یک گفتگو را برای شروع پیام‌رسانی انتخاب کنید
+            <!-- Messages Container -->
+            <div id="messages-container" class="flex-1 overflow-y-auto p-4 flex flex-col space-y-3 custom-scrollbar">
+                <div class="flex-1 flex flex-col items-center justify-center text-gray-400 space-y-4">
+                    <div class="w-24 h-24 rounded-full bg-blue-100 dark:bg-gray-800 flex items-center justify-center text-blue-500">
+                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+                    </div>
+                    <p class="bg-white/50 dark:bg-gray-800/50 px-4 py-2 rounded-full text-sm">لطفاً یک گفتگو را برای شروع انتخاب کنید</p>
                 </div>
             </div>
 
             <!-- Typing Indicator -->
-            <div id="typing-indicator" class="px-4 py-1 text-xs text-gray-500 italic hidden"></div>
+            <div id="typing-indicator" class="px-6 py-1 text-[10px] text-blue-500 font-bold hidden bg-transparent"></div>
 
             <!-- Reply Preview -->
-            <div id="reply-preview" class="px-4 py-2 bg-gray-100 dark:bg-gray-700 hidden border-t border-gray-200 dark:border-gray-600 flex justify-between items-center">
-                <div class="flex items-center">
-                    <div class="w-1 h-10 bg-blue-500 ml-2"></div>
+            <div id="reply-preview" class="mx-4 mb-2 p-2 bg-white/90 dark:bg-gray-800/90 backdrop-blur rounded-xl shadow-lg hidden border border-gray-100 dark:border-gray-700 flex justify-between items-center">
+                <div class="flex items-center flex-1 overflow-hidden">
+                    <div class="w-1 h-8 bg-blue-500 ml-3 rounded-full"></div>
                     <div class="flex flex-col overflow-hidden">
-                        <span class="text-blue-500 text-xs font-bold" id="reply-to-name">پاسخ به...</span>
-                        <span id="reply-to-content" class="text-xs text-gray-600 dark:text-gray-300 truncate w-64">محتوای پیام...</span>
+                        <span class="text-blue-500 text-[10px] font-bold" id="reply-to-name">...</span>
+                        <span id="reply-to-content" class="text-xs text-gray-500 dark:text-gray-400 truncate">...</span>
                     </div>
                 </div>
-                <button onclick="cancelReply()" class="text-gray-500">×</button>
+                <button onclick="cancelReply()" class="p-1 text-gray-400 hover:text-red-500">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
             </div>
 
             <!-- Input Area -->
-            <div id="input-area" class="p-4 bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 flex items-center space-x-2 space-x-reverse hidden">
-                <button id="file-btn" class="p-2 text-gray-500 hover:text-blue-500">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13"></path></svg>
+            <div id="input-area" class="p-3 bg-white dark:bg-gray-800 border-t border-gray-100 dark:border-gray-700 flex items-center space-x-2 space-x-reverse hidden">
+                <button id="file-btn" class="p-2 text-gray-400 hover:text-blue-500 transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13"></path></svg>
                 </button>
                 <input type="file" id="file-input" class="hidden" />
-                <input type="text" id="message-input" placeholder="پیام خود را بنویسید..." class="flex-1 p-2 bg-gray-100 dark:bg-gray-700 dark:text-white rounded-lg focus:outline-none">
-                <button id="send-btn" class="p-2 text-blue-500 hover:scale-110 transition-transform">
-                    <svg class="w-6 h-6 rotate-180" fill="currentColor" viewBox="0 0 20 20"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"></path></svg>
+                <input type="text" id="message-input" placeholder="پیام شما..." class="flex-1 p-3 bg-gray-100 dark:bg-gray-700 dark:text-white rounded-2xl outline-none text-sm focus:ring-1 focus:ring-blue-400 transition-all">
+                <button id="send-btn" class="w-10 h-10 bg-blue-500 text-white rounded-full flex items-center justify-center hover:bg-blue-600 shadow-md transform hover:scale-105 active:scale-95 transition-all">
+                    <svg class="w-5 h-5 rotate-180 mr-0.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"></path></svg>
                 </button>
+            </div>
+        </div>
+
+        <!-- Profile Modal -->
+        <div id="profile-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm hidden items-center justify-center z-[100] p-4">
+            <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl w-full max-w-md overflow-hidden transform transition-all">
+                <div class="h-32 bg-gradient-to-r from-blue-400 to-blue-600 relative">
+                    <button onclick="closeProfileModal()" class="absolute top-4 left-4 text-white hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </button>
+                </div>
+                <div class="px-8 pb-8 -mt-12 text-center">
+                    <div class="w-24 h-24 rounded-full border-4 border-white dark:border-gray-800 bg-gray-200 mx-auto shadow-lg overflow-hidden">
+                        <img id="profile-img" src="https://api.dicebear.com/7.x/avataaars/svg?seed=admin" class="w-full h-full object-cover">
+                    </div>
+                    <h3 id="profile-name-display" class="text-xl font-bold mt-4 dark:text-white">...</h3>
+                    <p id="profile-username-display" class="text-sm text-gray-500 mb-6">@...</p>
+
+                    <div class="space-y-4 text-right">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-400 mb-1 mr-1">نام کامل</label>
+                            <input type="text" id="edit-fullname" class="w-full p-3 bg-gray-50 dark:bg-gray-700 dark:text-white rounded-xl outline-none border border-gray-100 dark:border-gray-600">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-400 mb-1 mr-1">بیوگرافی</label>
+                            <textarea id="edit-bio" class="w-full p-3 bg-gray-50 dark:bg-gray-700 dark:text-white rounded-xl outline-none border border-gray-100 dark:border-gray-600 h-24 resize-none"></textarea>
+                        </div>
+                        <button onclick="saveProfile()" class="w-full bg-blue-500 text-white p-3 rounded-xl font-bold shadow-lg hover:bg-blue-600 transition-colors">ذخیره تغییرات</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

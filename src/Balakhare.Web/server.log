@@ -1,7 +1,7 @@
 Using launch settings from /app/src/Balakhare.Web/Properties/launchSettings.json...
 Building...
 info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (20ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      Executed DbCommand (21ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
       PRAGMA journal_mode = 'wal';
 info: Microsoft.EntityFrameworkCore.Database.Command[20101]
       Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
@@ -101,26 +101,55 @@ info: Microsoft.EntityFrameworkCore.Database.Command[20101]
           SELECT 1
           FROM "Users" AS "u")
 info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (18ms) [Parameters=[@p0='?', @p1='?' (DbType = DateTime), @p2='?' (Size = 10), @p3='?' (DbType = Boolean), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTime), @p7='?', @p8='?' (Size = 5)], CommandType='Text', CommandTimeout='30']
+      Executed DbCommand (16ms) [Parameters=[@p0='?' (Size = 23), @p1='?' (DbType = DateTime), @p2='?' (Size = 10), @p3='?' (DbType = Boolean), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTime), @p7='?', @p8='?' (Size = 5)], CommandType='Text', CommandTimeout='30']
       INSERT INTO "Users" ("Bio", "CreatedAt", "FullName", "IsAdmin", "IsBlocked", "IsOnline", "LastSeen", "ProfilePicturePath", "Username")
       VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8)
       RETURNING "Id";
 info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (0ms) [Parameters=[@p0='?', @p1='?' (DbType = DateTime), @p2='?' (Size = 9), @p3='?' (DbType = Boolean), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTime), @p7='?', @p8='?' (Size = 4)], CommandType='Text', CommandTimeout='30']
+      Executed DbCommand (0ms) [Parameters=[@p0='?' (Size = 28), @p1='?' (DbType = DateTime), @p2='?' (Size = 9), @p3='?' (DbType = Boolean), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTime), @p7='?', @p8='?' (Size = 4)], CommandType='Text', CommandTimeout='30']
       INSERT INTO "Users" ("Bio", "CreatedAt", "FullName", "IsAdmin", "IsBlocked", "IsOnline", "LastSeen", "ProfilePicturePath", "Username")
       VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8)
       RETURNING "Id";
 info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (0ms) [Parameters=[@p0='?', @p1='?' (DbType = DateTime), @p2='?' (Size = 10), @p3='?' (DbType = Boolean), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTime), @p7='?', @p8='?' (Size = 4)], CommandType='Text', CommandTimeout='30']
+      Executed DbCommand (0ms) [Parameters=[@p0='?' (Size = 16), @p1='?' (DbType = DateTime), @p2='?' (Size = 10), @p3='?' (DbType = Boolean), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTime), @p7='?', @p8='?' (Size = 4)], CommandType='Text', CommandTimeout='30']
       INSERT INTO "Users" ("Bio", "CreatedAt", "FullName", "IsAdmin", "IsBlocked", "IsOnline", "LastSeen", "ProfilePicturePath", "Username")
       VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8)
       RETURNING "Id";
 info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-      SELECT "c"."Id", "c"."CreatedAt", "c"."Title", "c"."Type"
-      FROM "Chats" AS "c"
-      WHERE "c"."Type" = 3
-      LIMIT 1
+      Executed DbCommand (0ms) [Parameters=[@p0='?' (Size = 18), @p1='?' (DbType = DateTime), @p2='?' (Size = 9), @p3='?' (DbType = Boolean), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTime), @p7='?', @p8='?' (Size = 3)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "Users" ("Bio", "CreatedAt", "FullName", "IsAdmin", "IsBlocked", "IsOnline", "LastSeen", "ProfilePicturePath", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8)
+      RETURNING "Id";
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@p0='?' (Size = 10), @p1='?' (DbType = DateTime), @p2='?' (Size = 11), @p3='?' (DbType = Boolean), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTime), @p7='?', @p8='?' (Size = 6)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "Users" ("Bio", "CreatedAt", "FullName", "IsAdmin", "IsBlocked", "IsOnline", "LastSeen", "ProfilePicturePath", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8)
+      RETURNING "Id";
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@p0='?' (Size = 12), @p1='?' (DbType = DateTime), @p2='?' (Size = 9), @p3='?' (DbType = Boolean), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTime), @p7='?', @p8='?' (Size = 6)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "Users" ("Bio", "CreatedAt", "FullName", "IsAdmin", "IsBlocked", "IsOnline", "LastSeen", "ProfilePicturePath", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8)
+      RETURNING "Id";
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@p0='?' (Size = 13), @p1='?' (DbType = DateTime), @p2='?' (Size = 11), @p3='?' (DbType = Boolean), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTime), @p7='?', @p8='?' (Size = 5)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "Users" ("Bio", "CreatedAt", "FullName", "IsAdmin", "IsBlocked", "IsOnline", "LastSeen", "ProfilePicturePath", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8)
+      RETURNING "Id";
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@p0='?' (Size = 18), @p1='?' (DbType = DateTime), @p2='?' (Size = 10), @p3='?' (DbType = Boolean), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTime), @p7='?', @p8='?' (Size = 4)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "Users" ("Bio", "CreatedAt", "FullName", "IsAdmin", "IsBlocked", "IsOnline", "LastSeen", "ProfilePicturePath", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8)
+      RETURNING "Id";
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@p0='?' (Size = 14), @p1='?' (DbType = DateTime), @p2='?' (Size = 10), @p3='?' (DbType = Boolean), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTime), @p7='?', @p8='?' (Size = 5)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "Users" ("Bio", "CreatedAt", "FullName", "IsAdmin", "IsBlocked", "IsOnline", "LastSeen", "ProfilePicturePath", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8)
+      RETURNING "Id";
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@p0='?' (Size = 10), @p1='?' (DbType = DateTime), @p2='?' (Size = 10), @p3='?' (DbType = Boolean), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTime), @p7='?', @p8='?' (Size = 4)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "Users" ("Bio", "CreatedAt", "FullName", "IsAdmin", "IsBlocked", "IsOnline", "LastSeen", "ProfilePicturePath", "Username")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8)
+      RETURNING "Id";
 info: Microsoft.EntityFrameworkCore.Database.Command[20101]
       Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?' (Size = 16), @p2='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
       INSERT INTO "Chats" ("CreatedAt", "Title", "Type")
@@ -131,6 +160,47 @@ info: Microsoft.EntityFrameworkCore.Database.Command[20101]
       INSERT INTO "Chats" ("CreatedAt", "Title", "Type")
       VALUES (@p0, @p1, @p2)
       RETURNING "Id";
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?' (Size = 13), @p2='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "Chats" ("CreatedAt", "Title", "Type")
+      VALUES (@p0, @p1, @p2)
+      RETURNING "Id";
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Boolean), @p3='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "ChatMembers" ("ChatId", "UserId", "IsAdmin", "JoinedAt")
+      VALUES (@p0, @p1, @p2, @p3);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Boolean), @p3='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "ChatMembers" ("ChatId", "UserId", "IsAdmin", "JoinedAt")
+      VALUES (@p0, @p1, @p2, @p3);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Boolean), @p3='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "ChatMembers" ("ChatId", "UserId", "IsAdmin", "JoinedAt")
+      VALUES (@p0, @p1, @p2, @p3);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Boolean), @p3='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "ChatMembers" ("ChatId", "UserId", "IsAdmin", "JoinedAt")
+      VALUES (@p0, @p1, @p2, @p3);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Boolean), @p3='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "ChatMembers" ("ChatId", "UserId", "IsAdmin", "JoinedAt")
+      VALUES (@p0, @p1, @p2, @p3);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Boolean), @p3='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "ChatMembers" ("ChatId", "UserId", "IsAdmin", "JoinedAt")
+      VALUES (@p0, @p1, @p2, @p3);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Boolean), @p3='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "ChatMembers" ("ChatId", "UserId", "IsAdmin", "JoinedAt")
+      VALUES (@p0, @p1, @p2, @p3);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Boolean), @p3='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "ChatMembers" ("ChatId", "UserId", "IsAdmin", "JoinedAt")
+      VALUES (@p0, @p1, @p2, @p3);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Boolean), @p3='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "ChatMembers" ("ChatId", "UserId", "IsAdmin", "JoinedAt")
+      VALUES (@p0, @p1, @p2, @p3);
 info: Microsoft.EntityFrameworkCore.Database.Command[20101]
       Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Boolean), @p3='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
       INSERT INTO "ChatMembers" ("ChatId", "UserId", "IsAdmin", "JoinedAt")
@@ -149,62 +219,160 @@ info: Microsoft.EntityFrameworkCore.Database.Command[20101]
       VALUES (@p0, @p1, @p2)
       RETURNING "Id";
 info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?' (Size = 10), @p2='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "Chats" ("CreatedAt", "Title", "Type")
+      VALUES (@p0, @p1, @p2)
+      RETURNING "Id";
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
       Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Boolean), @p3='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
       INSERT INTO "ChatMembers" ("ChatId", "UserId", "IsAdmin", "JoinedAt")
       VALUES (@p0, @p1, @p2, @p3);
 info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 12), @p2='?', @p3='?', @p4='?' (DbType = Int64), @p5='?' (DbType = Int32), @p6='?' (DbType = Boolean), @p7='?' (DbType = Boolean), @p8='?', @p9='?', @p10='?', @p11='?', @p12='?' (DbType = Int32), @p13='?' (DbType = Int32), @p14='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Boolean), @p3='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "ChatMembers" ("ChatId", "UserId", "IsAdmin", "JoinedAt")
+      VALUES (@p0, @p1, @p2, @p3);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 20), @p2='?', @p3='?', @p4='?' (DbType = Int64), @p5='?' (DbType = Int32), @p6='?' (DbType = Boolean), @p7='?' (DbType = Boolean), @p8='?', @p9='?', @p10='?', @p11='?', @p12='?' (DbType = Int32), @p13='?' (DbType = Int32), @p14='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
       INSERT INTO "Messages" ("ChatId", "Content", "FileName", "FilePath", "FileSize", "ForwardedFromUserId", "IsPinned", "IsRead", "LinkPreviewDescription", "LinkPreviewImageUrl", "LinkPreviewTitle", "LinkPreviewUrl", "ParentMessageId", "SenderId", "SentAt")
       VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14)
       RETURNING "Id";
 info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 18), @p2='?', @p3='?', @p4='?' (DbType = Int64), @p5='?' (DbType = Int32), @p6='?' (DbType = Boolean), @p7='?' (DbType = Boolean), @p8='?', @p9='?', @p10='?', @p11='?', @p12='?' (DbType = Int32), @p13='?' (DbType = Int32), @p14='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 26), @p2='?', @p3='?', @p4='?' (DbType = Int64), @p5='?' (DbType = Int32), @p6='?' (DbType = Boolean), @p7='?' (DbType = Boolean), @p8='?', @p9='?', @p10='?', @p11='?', @p12='?' (DbType = Int32), @p13='?' (DbType = Int32), @p14='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
       INSERT INTO "Messages" ("ChatId", "Content", "FileName", "FilePath", "FileSize", "ForwardedFromUserId", "IsPinned", "IsRead", "LinkPreviewDescription", "LinkPreviewImageUrl", "LinkPreviewTitle", "LinkPreviewUrl", "ParentMessageId", "SenderId", "SentAt")
       VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14)
       RETURNING "Id";
 info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 36), @p2='?', @p3='?', @p4='?' (DbType = Int64), @p5='?' (DbType = Int32), @p6='?' (DbType = Boolean), @p7='?' (DbType = Boolean), @p8='?', @p9='?', @p10='?', @p11='?', @p12='?' (DbType = Int32), @p13='?' (DbType = Int32), @p14='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
-      INSERT INTO "Messages" ("ChatId", "Content", "FileName", "FilePath", "FileSize", "ForwardedFromUserId", "IsPinned", "IsRead", "LinkPreviewDescription", "LinkPrevinfo: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (5ms) [Parameters=[@username='?' (Size = 8)], CommandType='Text', CommandTimeout='30']
-      SELECT "u"."Id", "u"."Bio", "u"."CreatedAt", "u"."FullName", "u"."IsOnline", "u"."LastSeen", "u"."ProfilePicturePath", "u"."Username"
-      FROM "Users" AS "u"
-      WHERE "u"."Username" = @username
-      LIMIT 1
-fail: Microsoft.EntityFrameworkCore.Database.Command[20102]
-      Failed executing DbCommand (9ms) [Parameters=[@p0='?', @p1='?' (DbType = DateTime), @p2='?' (Size = 8), @p3='?' (DbType = Boolean), @p4='?' (DbType = DateTime), @p5='?', @p6='?' (Size = 8)], CommandType='Text', CommandTimeout='30']
-      INSERT INTO "Users" ("Bio", "CreatedAt", "FullName", "IsOnline", "LastSeen", "ProfilePicturePath", "Username")
-      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6)
+      Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 43), @p2='?', @p3='?', @p4='?' (DbType = Int64), @p5='?' (DbType = Int32), @p6='?' (DbType = Boolean), @p7='?' (DbType = Boolean), @p8='?', @p9='?', @p10='?', @p11='?', @p12='?' (DbType = Int32), @p13='?' (DbType = Int32), @p14='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "Messages" ("ChatId", "Content", "FileName", "FilePath", "FileSize", "ForwardedFromUserId", "IsPinned", "IsRead", "LinkPreviewDescription", "LinkPreviewImageUrl", "LinkPreviewTitle", "LinkPreviewUrl", "ParentMessageId", "SenderId", "SentAt")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14)
       RETURNING "Id";
-fail: Microsoft.EntityFrameworkCore.Update[10000]
-      An exception occurred in the database while saving changes for context type 'Balakhare.Infrastructure.Data.AppDbContext'.
-      Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
-       ---> Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 19: 'NOT NULL constraint failed: Users.IsAdmin'.
-         at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
-         at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
-         at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
-         at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
-         at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
-         at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
-         at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, Cancellatioinfo: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-      SELECT COUNT(*)
-      FROM "Users" AS "u"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 38), @p2='?', @p3='?', @p4='?' (DbType = Int64), @p5='?' (DbType = Int32), @p6='?' (DbType = Boolean), @p7='?' (DbType = Boolean), @p8='?', @p9='?', @p10='?', @p11='?', @p12='?' (DbType = Int32), @p13='?' (DbType = Int32), @p14='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "Messages" ("ChatId", "Content", "FileName", "FilePath", "FileSize", "ForwardedFromUserId", "IsPinned", "IsRead", "LinkPreviewDescription", "LinkPreviewImageUrl", "LinkPreviewTitle", "LinkPreviewUrl", "ParentMessageId", "SenderId", "SentAt")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14)
+      RETURNING "Id";
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 43), @p2='?', @p3='?', @p4='?' (DbType = Int64), @p5='?' (DbType = Int32), @p6='?' (DbType = Boolean), @p7='?' (DbType = Boolean), @p8='?', @p9='?', @p10='?', @p11='?', @p12='?' (DbType = Int32), @p13='?' (DbType = Int32), @p14='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "Messages" ("ChatId", "Content", "FileName", "FilePath", "FileSize", "ForwardedFromUserId", "IsPinned", "IsRead", "LinkPreviewDescription", "LinkPreviewImageUrl", "LinkPreviewTitle", "LinkPreviewUrl", "ParentMessageId", "SenderId", "SentAt")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14)
+      RETURNING "Id";
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 34), @p2='?', @p3='?', @p4='?' (DbType = Int64), @p5='?' (DbType = Int32), @p6='?' (DbType = Boolean), @p7='?' (DbType = Boolean), @p8='?', @p9='?', @p10='?', @p11='?', @p12='?' (DbType = Int32), @p13='?' (DbType = Int32), @p14='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "Messages" ("ChatId", "Content", "FileName", "FilePath", "FileSize", "ForwardedFromUserId", "IsPinned", "IsRead", "LinkPreviewDescription", "LinkPreviewImageUrl", "LinkPreviewTitle", "LinkPreviewUrl", "ParentMessageId", "SenderId", "SentAt")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14)
+      RETURNING "Id";
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 37), @p2='?', @p3='?', @p4='?' (DbType = Int64), @p5='?' (DbType = Int32), @p6='?' (DbType = Boolean), @p7='?' (DbType = Boolean), @p8='?', @p9='?', @p10='?', @p11='?', @p12='?' (DbType = Int32), @p13='?' (DbType = Int32), @p14='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "Messages" ("ChatId", "Content", "FileName", "FilePath", "FileSize", "ForwardedFromUserId", "IsPinned", "IsRead", "LinkPreviewDescription", "LinkPreviewImageUrl", "LinkPreviewTitle", "LinkPreviewUrl", "ParentMessageId", "SenderId", "SentAt")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14)
+      RETURNING "Id";
+warn: Microsoft.EntityFrameworkCore.Query[10103]
+      The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results.
 info: Microsoft.EntityFrameworkCore.Database.Command[20101]
       Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-      SELECT COUNT(*)
+      SELECT "m"."Id", "m"."ChatId", "m"."Content", "m"."FileName", "m"."FilePath", "m"."FileSize", "m"."ForwardedFromUserId", "m"."IsPinned", "m"."IsRead", "m"."LinkPreviewDescription", "m"."LinkPreviewImageUrl", "m"."LinkPreviewTitle", "m"."LinkPreviewUrl", "m"."ParentMessageId", "m"."SenderId", "m"."SentAt"
       FROM "Messages" AS "m"
+      LIMIT 1
 info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-      SELECT COUNT(*)
-      FROM "Chats" AS "c"
+      Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?' (DbType = Int32), @p2='?' (Size = 4), @p3='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "MessageReactions" ("CreatedAt", "MessageId", "ReactionType", "UserId")
+      VALUES (@p0, @p1, @p2, @p3)
+      RETURNING "Id";
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://localhost:5006
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /app/src/Balakhare.Web
 info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-      SELECT COUNT(*)
-      FROM "MessageReactions" AS "m"
-info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-      SELECT "u"."Id", "u"."Username", "u"."FullName", "u"."IsAdmin", "u"."IsBlocked", "u"."CreatedAt"
+      Executed DbCommand (4ms) [Parameters=[@__username_0='?' (Size = 5)], CommandType='Text', CommandTimeout='30']
+      SELECT "u"."Id", "u"."Bio", "u"."CreatedAt", "u"."FullName", "u"."IsAdmin", "u"."IsBlocked", "u"."IsOnline", "u"."LastSeen", "u"."ProfilePicturePath", "u"."Username"
       FROM "Users" AS "u"
+      WHERE "u"."Username" = @__username_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT "u"."Id", "u"."Bio", "u"."CreatedAt", "u"."FullName", "u"."IsAdmin", "u"."IsBlocked", "u"."IsOnline", "u"."LastSeen", "u"."ProfilePicturePath", "u"."Username"
+      FROM "Users" AS "u"
+      WHERE "u"."Id" = @__p_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@p2='?' (DbType = Int32), @p0='?' (DbType = Boolean), @p1='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      UPDATE "Users" SET "IsOnline" = @p0, "LastSeen" = @p1
+      WHERE "Id" = @p2
+      RETURNING 1;
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT "c0"."Id", "c0"."Title", "c0"."Type", COALESCE((
+          SELECT "m"."Content"
+          FROM "Messages" AS "m"
+          WHERE "m"."ChatId" = "c"."ChatId"
+          ORDER BY "m"."SentAt" DESC
+          LIMIT 1), 'بدون پیام') AS "LastMessage"
+      FROM "ChatMembers" AS "c"
+      INNER JOIN "Chats" AS "c0" ON "c"."ChatId" = "c0"."Id"
+      WHERE "c"."UserId" = @__userId_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "c"."Id", "c"."Title", "c"."Type", COALESCE((
+          SELECT "m"."Content"
+          FROM "Messages" AS "m"
+          WHERE "m"."ChatId" = "c"."Id"
+          ORDER BY "m"."SentAt" DESC
+          LIMIT 1), 'بدون پیام') AS "LastMessage"
+      FROM "Chats" AS "c"
+      WHERE "c"."Type" = 3
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT "c"."Id", "c"."CreatedAt", "c"."Title", "c"."Type"
+      FROM "Chats" AS "c"
+      WHERE "c"."Id" = @__p_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__chatId_0='?' (DbType = Int32), @__userId_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT EXISTS (
+          SELECT 1
+          FROM "ChatMembers" AS "c"
+          WHERE "c"."ChatId" = @__chatId_0 AND "c"."UserId" = @__userId_1)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__chatId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT "m"."Id", "m"."ChatId", "m"."Content", "m"."FileName", "m"."FilePath", "m"."FileSize", "m"."ForwardedFromUserId", "m"."IsPinned", "m"."IsRead", "m"."LinkPreviewDescription", "m"."LinkPreviewImageUrl", "m"."LinkPreviewTitle", "m"."LinkPreviewUrl", "m"."ParentMessageId", "m"."SenderId", "m"."SentAt"
+      FROM "Messages" AS "m"
+      WHERE "m"."ChatId" = @__chatId_0 AND "m"."IsPinned"
+      LIMIT 1
+fail: Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware[1]
+      An unhandled exception has occurred while executing the request.
+      System.InvalidOperationException: Translating this query requires the SQL APPLY operation, which is not supported on SQLite.
+         at Microsoft.EntityFrameworkCore.Sqlite.Query.Internal.SqliteQueryTranslationPostprocessor.ApplyValidatingVisitor.VisitExtension(Expression extensionExpression)
+         at Microsoft.EntityFrameworkCore.Sqlite.Query.Internal.SqliteQueryTranslationPostprocessor.ApplyValidatingVisitor.VisitExtension(Expression extensionExpression)
+         at Microsoft.EntityFrameworkCore.Sqlite.Query.Internal.SqliteQueryTranslationPostprocessor.Process(Expression query)
+         at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutor[TResult](Expression query)
+         at Microsoft.EntityFrameworkCore.Storage.Database.CompileQuery[TResult](Expression query, Boolean async)
+         at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.CompileQueryCore[TResult](IDatabase database, Expression query, IModel model, Boolean async)
+         at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass12_0`1.<ExecuteAsync>b__0()
+         at Microsoft.EntityFrameworkCore.Query.Internal.CompiledQueryCache.GetOrAddQuery[TResult](Object cacheKey, Func`1 compiler)
+         at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteAsync[TResult](Expression query, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.ExecuteAsync[TResult](Expression expression, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1.GetAsyncEnumerator(CancellationToken cancellationToken)
+         at System.Runtime.CompilerServices.ConfiguredCancelableAsyncEnumerable`1.GetAsyncEnumerator()
+         at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+         at Balakhare.Web.Controllers.ChatController.GetMessages(Int32 chatId, String query) in /app/src/Balakhare.Web/Controllers/ChatController.cs:line 34
+         at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+         at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+         at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+         at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+         at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+         at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+      --- End of stack trace from previous location ---
+         at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+         at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+         at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+         at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+         at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+         at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
 info: Microsoft.EntityFrameworkCore.Database.Command[20101]
       Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 5)], CommandType='Text', CommandTimeout='30']
       SELECT "u"."Id", "u"."Bio", "u"."CreatedAt", "u"."FullName", "u"."IsAdmin", "u"."IsBlocked", "u"."IsOnline", "u"."LastSeen", "u"."ProfilePicturePath", "u"."Username"
@@ -240,39 +408,45 @@ info: Microsoft.EntityFrameworkCore.Database.Command[20101]
       WHERE "u"."Id" = @__p_0
       LIMIT 1
 info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (1ms) [Parameters=[@p2='?' (DbType = Int32), @p0='?' (DbType = Boolean), @p1='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
-      UPDATE "Users" SET "IsOnline" = @p0, "LastSeen" = @p1
-      WHERE "Id" = @p2
+      Executed DbCommand (0ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      UPDATE "Users" SET "LastSeen" = @p0
+      WHERE "Id" = @p1
       RETURNING 1;
-rosoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
-         at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
-         at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
-         at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
-         at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-         at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT "c"."Id", "c"."CreatedAt", "c"."Title", "c"."Type"
+      FROM "Chats" AS "c"
+      WHERE "c"."Id" = @__p_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__chatId_0='?' (DbType = Int32), @__userId_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT EXISTS (
+          SELECT 1
+          FROM "ChatMembers" AS "c"
+          WHERE "c"."ChatId" = @__chatId_0 AND "c"."UserId" = @__userId_1)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__chatId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT "m"."Id", "m"."ChatId", "m"."Content", "m"."FileName", "m"."FilePath", "m"."FileSize", "m"."ForwardedFromUserId", "m"."IsPinned", "m"."IsRead", "m"."LinkPreviewDescription", "m"."LinkPreviewImageUrl", "m"."LinkPreviewTitle", "m"."LinkPreviewUrl", "m"."ParentMessageId", "m"."SenderId", "m"."SentAt"
+      FROM "Messages" AS "m"
+      WHERE "m"."ChatId" = @__chatId_0 AND "m"."IsPinned"
+      LIMIT 1
 fail: Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware[1]
       An unhandled exception has occurred while executing the request.
-      Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
-       ---> Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 19: 'NOT NULL constraint failed: Users.IsAdmin'.
-         at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
-         at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
-         at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
-         at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
-         at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
-         at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
-         at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
-         at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
-         --- End of inner exception stack trace ---
-         at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
-         at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
-         at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
-         at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
-         at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
-         at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
-         at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-         at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-         at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-         at Balakhare.Web.Controllers.AccountController.Login(String username)
+      System.InvalidOperationException: Translating this query requires the SQL APPLY operation, which is not supported on SQLite.
+         at Microsoft.EntityFrameworkCore.Sqlite.Query.Internal.SqliteQueryTranslationPostprocessor.ApplyValidatingVisitor.VisitExtension(Expression extensionExpression)
+         at Microsoft.EntityFrameworkCore.Sqlite.Query.Internal.SqliteQueryTranslationPostprocessor.ApplyValidatingVisitor.VisitExtension(Expression extensionExpression)
+         at Microsoft.EntityFrameworkCore.Sqlite.Query.Internal.SqliteQueryTranslationPostprocessor.Process(Expression query)
+         at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutor[TResult](Expression query)
+         at Microsoft.EntityFrameworkCore.Storage.Database.CompileQuery[TResult](Expression query, Boolean async)
+         at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.CompileQueryCore[TResult](IDatabase database, Expression query, IModel model, Boolean async)
+         at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass12_0`1.<ExecuteAsync>b__0()
+         at Microsoft.EntityFrameworkCore.Query.Internal.CompiledQueryCache.GetOrAddQuery[TResult](Object cacheKey, Func`1 compiler)
+         at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteAsync[TResult](Expression query, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.ExecuteAsync[TResult](Expression expression, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1.GetAsyncEnumerator(CancellationToken cancellationToken)
+         at System.Runtime.CompilerServices.ConfiguredCancelableAsyncEnumerable`1.GetAsyncEnumerator()
+         at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+         at Balakhare.Web.Controllers.ChatController.GetMessages(Int32 chatId, String query) in /app/src/Balakhare.Web/Controllers/ChatController.cs:line 34
          at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
          at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
          at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
@@ -286,3 +460,191 @@ fail: Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware[1]
          at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
          at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
          at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 5)], CommandType='Text', CommandTimeout='30']
+      SELECT "u"."Id", "u"."Bio", "u"."CreatedAt", "u"."FullName", "u"."IsAdmin", "u"."IsBlocked", "u"."IsOnline", "u"."LastSeen", "u"."ProfilePicturePath", "u"."Username"
+      FROM "Users" AS "u"
+      WHERE "u"."Username" = @__username_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT "c0"."Id", "c0"."Title", "c0"."Type", COALESCE((
+          SELECT "m"."Content"
+          FROM "Messages" AS "m"
+          WHERE "m"."ChatId" = "c"."ChatId"
+          ORDER BY "m"."SentAt" DESC
+          LIMIT 1), 'بدون پیام') AS "LastMessage"
+      FROM "ChatMembers" AS "c"
+      INNER JOIN "Chats" AS "c0" ON "c"."ChatId" = "c0"."Id"
+      WHERE "c"."UserId" = @__userId_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "c"."Id", "c"."Title", "c"."Type", COALESCE((
+          SELECT "m"."Content"
+          FROM "Messages" AS "m"
+          WHERE "m"."ChatId" = "c"."Id"
+          ORDER BY "m"."SentAt" DESC
+          LIMIT 1), 'بدون پیام') AS "LastMessage"
+      FROM "Chats" AS "c"
+      WHERE "c"."Type" = 3
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT "u"."Id", "u"."Bio", "u"."CreatedAt", "u"."FullName", "u"."IsAdmin", "u"."IsBlocked", "u"."IsOnline", "u"."LastSeen", "u"."ProfilePicturePath", "u"."Username"
+      FROM "Users" AS "u"
+      WHERE "u"."Id" = @__p_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      UPDATE "Users" SET "LastSeen" = @p0
+      WHERE "Id" = @p1
+      RETURNING 1;
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT "c"."Id", "c"."CreatedAt", "c"."Title", "c"."Type"
+      FROM "Chats" AS "c"
+      WHERE "c"."Id" = @__p_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__chatId_0='?' (DbType = Int32), @__userId_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT EXISTS (
+          SELECT 1
+          FROM "ChatMembers" AS "c"
+          WHERE "c"."ChatId" = @__chatId_0 AND "c"."UserId" = @__userId_1)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__chatId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT "m"."Id", "m"."ChatId", "m"."Content", "m"."FileName", "m"."FilePath", "m"."FileSize", "m"."ForwardedFromUserId", "m"."IsPinned", "m"."IsRead", "m"."LinkPreviewDescription", "m"."LinkPreviewImageUrl", "m"."LinkPreviewTitle", "m"."LinkPreviewUrl", "m"."ParentMessageId", "m"."SenderId", "m"."SentAt"
+      FROM "Messages" AS "m"
+      WHERE "m"."ChatId" = @__chatId_0 AND "m"."IsPinned"
+      LIMIT 1
+fail: Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware[1]
+      An unhandled exception has occurred while executing the request.
+      System.InvalidOperationException: Translating this query requires the SQL APPLY operation, which is not supported on SQLite.
+         at Microsoft.EntityFrameworkCore.Sqlite.Query.Internal.SqliteQueryTranslationPostprocessor.ApplyValidatingVisitor.VisitExtension(Expression extensionExpression)
+         at Microsoft.EntityFrameworkCore.Sqlite.Query.Internal.SqliteQueryTranslationPostprocessor.ApplyValidatingVisitor.VisitExtension(Expression extensionExpression)
+         at Microsoft.EntityFrameworkCore.Sqlite.Query.Internal.SqliteQueryTranslationPostprocessor.Process(Expression query)
+         at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutor[TResult](Expression query)
+         at Microsoft.EntityFrameworkCore.Storage.Database.CompileQuery[TResult](Expression query, Boolean async)
+         at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.CompileQueryCore[TResult](IDatabase database, Expression query, IModel model, Boolean async)
+         at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass12_0`1.<ExecuteAsync>b__0()
+         at Microsoft.EntityFrameworkCore.Query.Internal.CompiledQueryCache.GetOrAddQuery[TResult](Object cacheKey, Func`1 compiler)
+         at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteAsync[TResult](Expression query, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.ExecuteAsync[TResult](Expression expression, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1.GetAsyncEnumerator(CancellationToken cancellationToken)
+         at System.Runtime.CompilerServices.ConfiguredCancelableAsyncEnumerable`1.GetAsyncEnumerator()
+         at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+         at Balakhare.Web.Controllers.ChatController.GetMessages(Int32 chatId, String query) in /app/src/Balakhare.Web/Controllers/ChatController.cs:line 34
+         at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+         at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+         at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+         at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+         at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+         at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+      --- End of stack trace from previous location ---
+         at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+         at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+         at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+         at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+         at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+         at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT "c0"."Id", "c0"."Title", "c0"."Type", COALESCE((
+          SELECT "m"."Content"
+          FROM "Messages" AS "m"
+          WHERE "m"."ChatId" = "c"."ChatId"
+          ORDER BY "m"."SentAt" DESC
+          LIMIT 1), 'بدون پیام') AS "LastMessage"
+      FROM "ChatMembers" AS "c"
+      INNER JOIN "Chats" AS "c0" ON "c"."ChatId" = "c0"."Id"
+      WHERE "c"."UserId" = @__userId_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "c"."Id", "c"."Title", "c"."Type", COALESCE((
+          SELECT "m"."Content"
+          FROM "Messages" AS "m"
+          WHERE "m"."ChatId" = "c"."Id"
+          ORDER BY "m"."SentAt" DESC
+          LIMIT 1), 'بدون پیام') AS "LastMessage"
+      FROM "Chats" AS "c"
+      WHERE "c"."Type" = 3
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT "u"."Id", "u"."Bio", "u"."CreatedAt", "u"."FullName", "u"."IsAdmin", "u"."IsBlocked", "u"."IsOnline", "u"."LastSeen", "u"."ProfilePicturePath", "u"."Username"
+      FROM "Users" AS "u"
+      WHERE "u"."Id" = @__p_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      UPDATE "Users" SET "LastSeen" = @p0
+      WHERE "Id" = @p1
+      RETURNING 1;
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT "c"."Id", "c"."CreatedAt", "c"."Title", "c"."Type"
+      FROM "Chats" AS "c"
+      WHERE "c"."Id" = @__p_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__chatId_0='?' (DbType = Int32), @__userId_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT EXISTS (
+          SELECT 1
+          FROM "ChatMembers" AS "c"
+          WHERE "c"."ChatId" = @__chatId_0 AND "c"."UserId" = @__userId_1)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__chatId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT "m"."Id", "m"."ChatId", "m"."Content", "m"."FileName", "m"."FilePath", "m"."FileSize", "m"."ForwardedFromUserId", "m"."IsPinned", "m"."IsRead", "m"."LinkPreviewDescription", "m"."LinkPreviewImageUrl", "m"."LinkPreviewTitle", "m"."LinkPreviewUrl", "m"."ParentMessageId", "m"."SenderId", "m"."SentAt"
+      FROM "Messages" AS "m"
+      WHERE "m"."ChatId" = @__chatId_0 AND "m"."IsPinned"
+      LIMIT 1
+fail: Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware[1]
+      An unhandled exception has occurred while executing the request.
+      System.InvalidOperationException: Translating this query requires the SQL APPLY operation, which is not supported on SQLite.
+         at Microsoft.EntityFrameworkCore.Sqlite.Query.Internal.SqliteQueryTranslationPostprocessor.ApplyValidatingVisitor.VisitExtension(Expression extensionExpression)
+         at Microsoft.EntityFrameworkCore.Sqlite.Query.Internal.SqliteQueryTranslationPostprocessor.ApplyValidatingVisitor.VisitExtension(Expression extensionExpression)
+         at Microsoft.EntityFrameworkCore.Sqlite.Query.Internal.SqliteQueryTranslationPostprocessor.Process(Expression query)
+         at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutor[TResult](Expression query)
+         at Microsoft.EntityFrameworkCore.Storage.Database.CompileQuery[TResult](Expression query, Boolean async)
+         at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.CompileQueryCore[TResult](IDatabase database, Expression query, IModel model, Boolean async)
+         at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass12_0`1.<ExecuteAsync>b__0()
+         at Microsoft.EntityFrameworkCore.Query.Internal.CompiledQueryCache.GetOrAddQuery[TResult](Object cacheKey, Func`1 compiler)
+         at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteAsync[TResult](Expression query, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.ExecuteAsync[TResult](Expression expression, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1.GetAsyncEnumerator(CancellationToken cancellationToken)
+         at System.Runtime.CompilerServices.ConfiguredCancelableAsyncEnumerable`1.GetAsyncEnumerator()
+         at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+         at Balakhare.Web.Controllers.ChatController.GetMessages(Int32 chatId, String query) in /app/src/Balakhare.Web/Controllers/ChatController.cs:line 34
+         at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+         at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+         at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+         at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+         at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+         at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+      --- End of stack trace from previous location ---
+         at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+         at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+         at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+         at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+         at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+         at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM "Users" AS "u"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM "Messages" AS "m"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM "Chats" AS "c"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM "MessageReactions" AS "m"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "u"."Id", "u"."Username", "u"."FullName", "u"."IsAdmin", "u"."IsBlocked", "u"."CreatedAt"
+      FROM "Users" AS "u"
