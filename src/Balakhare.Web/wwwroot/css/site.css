@@ -1,0 +1,56 @@
+@font-face {
+    font-family: 'Vazir';
+    src: url('https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/Vazir.woff2') format('woff2');
+}
+
+body {
+    font-family: 'Vazir', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 3px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    background: #475569;
+}
+
+.message-bubble {
+    max-width: 70%;
+    padding: 8px 12px;
+    border-radius: 12px;
+    position: relative;
+    word-wrap: break-word;
+}
+
+.message-sent {
+    background-color: #dcf8c6;
+    align-self: flex-end;
+    border-bottom-left-radius: 12px;
+}
+
+.dark .message-sent {
+    background-color: #056162;
+    color: white;
+}
+
+.message-received {
+    background-color: white;
+    align-self: flex-start;
+    border-bottom-right-radius: 12px;
+}
+
+.dark .message-received {
+    background-color: #262d31;
+    color: white;
+}
