@@ -50,8 +50,11 @@ app.MapHub<ChatHub>("/chatHub");
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-    db.Database.EnsureCreated();
-    DataSeeder.Seed(db);
+    if (db.Database.IsRelational())
+    {
+        db.Database.EnsureCreated();
+        DataSeeder.Seed(db);
+    }
 }
 
 app.Run();

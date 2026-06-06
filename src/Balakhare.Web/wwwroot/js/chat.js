@@ -20,8 +20,13 @@ loginBtn.addEventListener('click', async () => {
     const username = usernameInput.value.trim();
     if (username) {
         const res = await fetch('/api/account/login', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(username) });
-        currentUser = await res.json(); loginOverlay.classList.add('hidden'); localStorage.setItem('balakhare_user', JSON.stringify(currentUser));
-        loadChats(); startConnection();
+        if (res.ok) {
+            currentUser = await res.json();
+            loginOverlay.classList.remove('flex');
+            loginOverlay.classList.add('hidden');
+            localStorage.setItem('balakhare_user', JSON.stringify(currentUser));
+            loadChats(); startConnection();
+        }
     }
 });
 
@@ -232,5 +237,10 @@ document.getElementById('file-input').onchange = async () => {
 (function init() {
     if (localStorage.getItem('balakhare_theme') === 'dark') document.documentElement.classList.add('dark');
     const saved = localStorage.getItem('balakhare_user');
-    if (saved) { currentUser = JSON.parse(saved); loginOverlay.classList.add('hidden'); loadChats(); startConnection(); }
+    if (saved) {
+        currentUser = JSON.parse(saved);
+        loginOverlay.classList.remove('flex');
+        loginOverlay.classList.add('hidden');
+        loadChats(); startConnection();
+    }
 })();
