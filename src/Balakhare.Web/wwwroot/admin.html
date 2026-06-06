@@ -2,38 +2,84 @@
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>پنل مدیریت بلاخره</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پنل مدیریت بلاخره | داشبورد نظارت</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="/css/site.css" rel="stylesheet">
 </head>
-<body class="bg-gray-100 p-8">
-    <div class="max-w-6xl mx-auto">
-        <header class="flex justify-between items-center mb-8">
-            <h1 class="text-3xl font-bold">پنل مدیریت بلاخره</h1>
-            <a href="/" class="text-blue-500 underline">بازگشت به چت</a>
-        </header>
+<body class="bg-slate-50 text-slate-800 font-sans">
+    <div class="min-h-screen flex">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-slate-900 text-white flex flex-col hidden md:flex">
+            <div class="p-6">
+                <h1 class="text-2xl font-bold text-blue-400">پنل مدیریت</h1>
+                <p class="text-xs text-slate-400 mt-1">پیام‌رسان بلاخره</p>
+            </div>
+            <nav class="flex-1 px-4 space-y-2 mt-4">
+                <a href="#" class="flex items-center p-3 bg-blue-600 rounded-lg text-sm font-bold">
+                    <span class="ml-3">داشبورد</span>
+                </a>
+                <a href="/" class="flex items-center p-3 hover:bg-slate-800 rounded-lg text-sm transition-colors">
+                    <span class="ml-3">بازگشت به چت</span>
+                </a>
+            </nav>
+            <div class="p-6 border-t border-slate-800">
+                <div class="flex items-center">
+                    <div class="w-8 h-8 rounded-full bg-blue-500 mr-3"></div>
+                    <div class="text-xs">
+                        <p class="font-bold">مدیر سیستم</p>
+                        <p class="text-slate-400">آنلاین</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
 
-        <div class="grid grid-cols-4 gap-4 mb-8" id="stats-container">
-            <!-- Stats cards -->
-        </div>
+        <!-- Main Content -->
+        <main class="flex-1 p-8 overflow-y-auto">
+            <header class="flex justify-between items-center mb-10">
+                <h2 class="text-2xl font-bold">خلاصه وضعیت سیستم</h2>
+                <div class="flex items-center space-x-4 space-x-reverse">
+                    <span id="last-update" class="text-xs text-slate-400">آخرین بروزرسانی: هم‌اکنون</span>
+                    <button onclick="loadAdminData()" class="bg-white p-2 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                        <svg class="w-5 h-5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                    </button>
+                </div>
+            </header>
 
-        <div class="bg-white rounded-lg shadow p-6">
-            <h2 class="text-xl font-bold mb-4">مدیریت کاربران</h2>
-            <table class="w-full text-right border-collapse">
-                <thead>
-                    <tr class="bg-gray-50 border-b">
-                        <th class="p-2">شناسه</th>
-                        <th class="p-2">نام</th>
-                        <th class="p-2">نام کاربری</th>
-                        <th class="p-2">وضعیت</th>
-                        <th class="p-2">عملیات</th>
-                    </tr>
-                </thead>
-                <tbody id="users-table">
-                    <!-- User rows -->
-                </tbody>
-            </table>
-        </div>
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10" id="stats-container">
+                <!-- Stats cards will be injected here -->
+            </div>
+
+            <!-- Tables Section -->
+            <div class="grid grid-cols-1 gap-10">
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
+                    <div class="p-6 border-b border-slate-50 flex justify-between items-center">
+                        <h3 class="font-bold text-lg">مدیریت کاربران</h3>
+                        <div class="relative w-64">
+                            <input type="text" placeholder="جستجو در کاربران..." class="w-full pl-10 pr-4 py-2 bg-slate-50 rounded-xl text-sm outline-none focus:ring-1 focus:ring-blue-400">
+                            <svg class="w-4 h-4 absolute left-3 top-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                        </div>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-right">
+                            <thead>
+                                <tr class="text-slate-400 text-xs font-bold border-b border-slate-50">
+                                    <th class="p-4 mr-2">نام و مشخصات</th>
+                                    <th class="p-4">نام کاربری</th>
+                                    <th class="p-4">تاریخ عضویت</th>
+                                    <th class="p-4 text-center">وضعیت</th>
+                                    <th class="p-4 text-center">عملیات</th>
+                                </tr>
+                            </thead>
+                            <tbody id="users-table" class="text-sm">
+                                <!-- User rows will be injected here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
     </div>
     <script src="/js/admin.js"></script>
 </body>
