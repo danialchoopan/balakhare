@@ -22,6 +22,9 @@ builder.Services.AddDbContext<AppDbContext>(options =>
         case "postgresql":
             options.UseNpgsql(connectionString);
             break;
+        case "mysql":
+            options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
+            break;
         case "sqlite":
         default:
             options.UseSqlite(connectionString ?? "Data Source=balakhare.db");
