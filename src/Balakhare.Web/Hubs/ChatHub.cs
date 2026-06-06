@@ -146,4 +146,14 @@ public class ChatHub : Hub
             await Clients.All.SendAsync("UserStatusChanged", new { UserId = userId, IsOnline = isOnline });
         }
     }
+
+    public async Task SendTypingNotification(int chatId, string fullName)
+    {
+        await Clients.Group(chatId.ToString()).SendAsync("UserTyping", new { ChatId = chatId, FullName = fullName });
+    }
+
+    public async Task LeaveChat(int chatId)
+    {
+        await Groups.RemoveFromGroupAsync(Context.ConnectionId, chatId.ToString());
+    }
 }

@@ -21,8 +21,21 @@ public class ChatController : ControllerBase
     }
 
     [HttpGet("{chatId}/messages")]
-    public async Task<IActionResult> GetMessages(int chatId, string? query = null)
+    public async Task<IActionResult> GetMessages(int chatId, int? userId = null, string? query = null)
     {
+        if (userId.HasValue)
+        {
+            var unreadMessages = await _context.Messages
+                .Where(m => m.ChatId == chatId && !m.IsRead && m.SenderId != userId.Value)
+                .ToListAsync();
+
+            if (unreadMessages.Any())
+            {
+                foreach (var m in unreadMessages) m.IsRead = true;
+                await _context.SaveChangesAsync();
+            }
+        }
+
         var messagesQuery = _context.Messages
             .Where(m => m.ChatId == chatId);
 
@@ -72,40 +85,54 @@ public class ChatController : ControllerBase
     [HttpGet("list")]
     public async Task<IActionResult> GetChats(int userId)
     {
-        var userChats = await _context.ChatMembers
+        var chatMembers = await _context.ChatMembers
             .Where(cm => cm.UserId == userId)
             .Include(cm => cm.Chat)
-            .Select(cm => new
+            .ToListAsync();
+
+        var userChats = new List<object>();
+
+        foreach (var cm in chatMembers)
+        {
+            var lastMessage = await _context.Messages
+                .Where(m => m.ChatId == cm.ChatId)
+                .OrderByDescending(m => m.SentAt)
+                .Select(m => m.Content)
+                .FirstOrDefaultAsync() ?? "بدون پیام";
+
+            var unreadCount = await _context.Messages
+                .Where(m => m.ChatId == cm.ChatId && !m.IsRead && m.SenderId != userId)
+                .CountAsync();
+
+            userChats.Add(new
             {
                 cm.Chat.Id,
                 cm.Chat.Title,
                 cm.Chat.Type,
-                LastMessage = _context.Messages
-                    .Where(m => m.ChatId == cm.ChatId)
-                    .OrderByDescending(m => m.SentAt)
-                    .Select(m => m.Content)
-                    .FirstOrDefault() ?? "بدون پیام"
-            })
-            .ToListAsync();
+                LastMessage = lastMessage,
+                UnreadCount = unreadCount
+            });
+        }
 
-        var publicChat = await _context.Chats
-            .Where(c => c.Type == ChatType.PublicChatroom)
-            .Select(c => new
-            {
-                c.Id,
-                c.Title,
-                c.Type,
-                LastMessage = _context.Messages
-                    .Where(m => m.ChatId == c.Id)
-                    .OrderByDescending(m => m.SentAt)
-                    .Select(m => m.Content)
-                    .FirstOrDefault() ?? "بدون پیام"
-            })
-            .FirstOrDefaultAsync();
+        var publicChatEntity = await _context.Chats
+            .FirstOrDefaultAsync(c => c.Type == ChatType.PublicChatroom);
 
-        if (publicChat != null && !userChats.Any(c => c.Id == publicChat.Id))
+        if (publicChatEntity != null && !chatMembers.Any(cm => cm.ChatId == publicChatEntity.Id))
         {
-            userChats.Add(publicChat);
+            var lastMessage = await _context.Messages
+                .Where(m => m.ChatId == publicChatEntity.Id)
+                .OrderByDescending(m => m.SentAt)
+                .Select(m => m.Content)
+                .FirstOrDefaultAsync() ?? "بدون پیام";
+
+            userChats.Add(new
+            {
+                publicChatEntity.Id,
+                publicChatEntity.Title,
+                publicChatEntity.Type,
+                LastMessage = lastMessage,
+                UnreadCount = 0
+            });
         }
 
         return Ok(userChats);
